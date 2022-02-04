@@ -29,7 +29,7 @@ namespace ClientA
                 {
                     Response<MessageResponse> response = await spammer.GetResponse<MessageResponse>(new Message { MessageContent = $"Spam, spam spam, spammity spam, spam, spam!" });
                     logger.LogInformation($"Recieved message: {response.Message.Response}");
-                    Task.Delay(2000).Wait();
+                    await Task.Delay(2000);
                 }
                 catch(Exception ex)
                 {
